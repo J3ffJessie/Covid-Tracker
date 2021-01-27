@@ -29,17 +29,17 @@ export function ApiCall() {
 
   const [data, setData] = useState({defaultData})
 
-  const [state, setState] = useState('')
+  // const [userState, setUserState] = useState('')
 
   React.useEffect( () => {
 
     setRequestState('pending')
     //api call
-    axios.get('https://api.covidtracking.com/v1/states/tn/current.json')
+    axios.get('https://api.covidtracking.com/v1/states/in/current.json')
     .then((response) => {
       setRequestState('success')
       setData(response.data)
-      console.log(response.data);
+      console.log(data);
     })
     .catch((error) => {
       setRequestState('failure')
