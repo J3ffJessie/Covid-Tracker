@@ -73,6 +73,7 @@ function PickState() {
             <h3>State Selection</h3>
             <div className='state-picker'>
             <Dropdown
+            className='dropdown-field'
             options={options}
             value={defaultOption}
             placeholder="Select your State"
