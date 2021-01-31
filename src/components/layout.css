@@ -87,7 +87,14 @@ h1 {
   text-rendering: optimizeLegibility;
   font-size: 2.25rem;
   line-height: 1.1;
+  text-align: center;
 }
+
+.main-area {
+  display: block;
+  margin-left: 300px;
+}
+
 mark {
   background-color: #ff0;
   color: #000;
@@ -594,4 +601,22 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+
+footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 500px;
+}
+
+.state-picker {
+  display: flex;
+  flex-direction: row;
+}
+
+.state-select {
+  margin-left: 10px;
+  border-radius: 15px;
+
 }

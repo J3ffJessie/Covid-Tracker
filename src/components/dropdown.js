@@ -69,15 +69,19 @@ const defaultOption = "Select your State";
 
 function PickState() {
     return(
-        <section>
+        <div>
             <h3>State Selection</h3>
+            <div className='state-picker'>
             <Dropdown
             options={options}
             value={defaultOption}
             placeholder="Select your State"
             />
             <button className="state-select">Enter</button>
-        </section>
+        </div>
+
+        </div>
+        
     )
 }
 

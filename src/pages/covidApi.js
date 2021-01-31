@@ -14,8 +14,6 @@ export function ApiCall() {
 
   const [data, setData] = useState('')
 
-  // const [userState, setUserState] = useState('')
-
   React.useEffect( () => {
 
     setRequestState('pending')
