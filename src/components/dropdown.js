@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
 
 
 const options = [
@@ -57,27 +59,27 @@ const options = [
 
 const defaultOption = "Select your State";
 
-// const handleSubmit() {
 
 
+function PickState(props) {
+    const [value, setValue] = useState('');
+    const handleSelect = (event) => {
+        console.log(event);
+        setValue(event)
+    }
 
-
-// }
-
-
-function PickState() {
     return(
-        <div>
-            <h3>State Selection</h3>
-            <div className='state-picker'>
-            <button className="state-select">Enter</button>
+        <div className='dropdown-container'>
+            <Dropdown
+            options={options}
+            onChange={handleSelect}
+            value=''
+            placeholder="Select your State"
+            />
+            <button>Submit</button>
         </div>
-
-        </div>
-        
     )
+
 }
-
-
 
 export default PickState;
