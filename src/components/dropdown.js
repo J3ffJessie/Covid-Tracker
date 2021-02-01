@@ -1,6 +1,4 @@
 import React from 'react';
-import Dropdown from 'react-dropdown';
-import 'react-dropdown/style.css';
 
 
 const options = [
@@ -72,12 +70,6 @@ function PickState() {
         <div>
             <h3>State Selection</h3>
             <div className='state-picker'>
-            <Dropdown
-            className='dropdown-field'
-            options={options}
-            value={defaultOption}
-            placeholder="Select your State"
-            />
             <button className="state-select">Enter</button>
         </div>
 
