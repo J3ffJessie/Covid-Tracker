@@ -2,8 +2,8 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 import axios from 'axios'
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "./layout"
+import SEO from "./seo"
 
 
 

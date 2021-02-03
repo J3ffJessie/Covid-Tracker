@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import ApiCall from './covidApi'
+import ApiCall from '../components/covidApi'
 import PickState from "../components/dropdown"
 
 const IndexPage = () => (
