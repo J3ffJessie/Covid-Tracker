@@ -12,14 +12,23 @@ export default function ApiCall() {
   const [data, setData] = useState('')
 
   async function fetchCovidData(value) {
-    const response = await axios.get('https://api.covidtracking.com/v1/states/tn /current.json');
-    setData(await response.data);
-    console.log(response.data);
+    const resData = await axios.get('https://api.covidtracking.com/v1/states/tn/current.json');
+
+    if(resData && resData.value) {
+      setData(resData);
+    }
+    console.log(resData);
   }
 
   useEffect(() => {
-    fetchCovidData(data.value);
-  }, [data.value]);
+    let mounted = true
+
+    if(mounted) {
+      fetchCovidData(data.value);
+    }
+
+    return () => mounted = false 
+  }, []);
 
   if (!data) {
     return "loading....";
