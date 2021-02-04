@@ -1,3 +1,6 @@
+import React from 'react';
+import { act } from 'react-dom/test-utils';
+import covidApi from '../src/components/covidApi';
 
 let container = null
 beforeEach(() => {
@@ -49,4 +52,5 @@ it("renders covid statistics", async () => {
 
     global.fetch.mockRestore();
 });
+
 
