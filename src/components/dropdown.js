@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
+import { render } from 'react-dom';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
+import ApiCall from './covidApi';
 
 
 const options = [
@@ -60,7 +62,6 @@ const options = [
 const defaultOption = "Select your State";
 
 
-
 function PickState(props) {
     const [value, setValue] = useState('');
     const handleSelect = (event) => {
@@ -76,7 +77,7 @@ function PickState(props) {
             value=''
             placeholder="Select your State"
             />
-            <button>Submit</button>
+            <button onSubmit={handleClick()}>Submit</button>
         </div>
     )
 
