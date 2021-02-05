@@ -36,7 +36,7 @@ it("renders covid statistics", async () => {
         json: () => Promise.resolve(fakeData)
     }));
 
-    expect(container.querySelector("p").textContent).toBe(fakeData.state);
+    expect(container.querySelector("h2").textContent).toBe(fakeData.state);
     expect(container.querySelector("p").textContent).toBe(fakeData.date);
     expect(container.querySelector("p").textContent).toBe(fakeData.positive);
     expect(container.querySelector("p").textContent).toBe(fakeData.negative);

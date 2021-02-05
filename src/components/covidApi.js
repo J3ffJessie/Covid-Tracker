@@ -12,7 +12,7 @@ export default function ApiCall() {
   const [data, setData] = useState('')
 
   async function fetchCovidData(value) {
-    const response = await axios.get('https://api.covidtracking.com/v1/states/tn /current.json');
+    const response = await axios.get('https://api.covidtracking.com/v1/states/tn/current.json');
     setData(await response.data);
     console.log(response.data);
   }
@@ -30,7 +30,7 @@ export default function ApiCall() {
           <div className="banner">
             <div className="container">
             <h1>Covid Data</h1>
-            <p>Here are the stats for the State chosen: {data.state} </p>
+            <h2>Here are the stats for the State chosen: {data.state} </h2>
             <p>Date: {data.date}</p>
             <p>Positive Test: {data.positive}</p>
             <p>Negative Tests: {data.negative}</p>
