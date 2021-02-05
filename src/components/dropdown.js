@@ -66,7 +66,7 @@ function PickState(props) {
     const [value, setValue] = useState('');
     const handleSelect = (event) => {
         console.log(event);
-        setValue(event)
+        setValue(value)
     }
 
     return(
@@ -74,10 +74,10 @@ function PickState(props) {
             <Dropdown
             options={options}
             onChange={handleSelect}
-            value=''
+            value={value}
             placeholder="Select your State"
             />
-            <button onSubmit={handleClick()}>Submit</button>
+            <button>Submit</button>
         </div>
     )
 
