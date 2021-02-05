@@ -22,10 +22,7 @@ const fakeData = {
   hospitalizedIncrease: "0",
 }
 
-it("renders covid statistics loading state", async () => {
-  const { asFragment } = render(<ApiCall />)
-  expect(asFragment()).toMatchSnapshot()
-})
+
 
 it("should render covid statistics", async () => {
   axios.get.mockImplementationOnce(() => Promise.resolve(fakeData))
