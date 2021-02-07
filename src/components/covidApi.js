@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { Link } from "gatsby"
 import axios from 'axios'
+import states from '../utils/states'
 
 import Layout from "./layout"
 import SEO from "./seo"
@@ -11,16 +12,23 @@ export default function ApiCall() {
 
   const [data, setData] = useState('')
 
+  const [state, setState] = useState('il');
+
+  const onStateSelect = (e) => {
+    e.preventDefault();
+    setState(e.target.value)
+  }
+
   async function fetchCovidData(value) {
-    const response = await axios.get('https://api.covidtracking.com/v1/states/tn/current.json');
+    const response = await axios.get(`https://api.covidtracking.com/v1/states/${value}/current.json`);
     setData(await response.data);
     console.log(response.data);
 
   }
 
   useEffect(() => {
-    fetchCovidData(data.value);
-  }, [data.value]);
+    fetchCovidData(state);
+  }, [state]);
 
   if (!data) {
     return "loading....";
@@ -45,7 +53,14 @@ export default function ApiCall() {
             <p># of increased hospitilizations: {data.hospitalizedIncrease}</p>
             </div>
           </div>
-          </div>
+        </div>
+        <div>
+          <select name='state' id='stateSelect' onChange={(e) => onStateSelect(e)}>
+            {
+              states.map(s => <option value={s.value}>{s.label}</option>)
+            }
+          </select>
+        </div>
       </div>
   
     )    
