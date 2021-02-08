@@ -1,0 +1,27 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"workbench.colorTheme": "FireFly Pro",
+		"workbench.colorCustomizations": {
+			"activityBar.activeBackground": "#0ed21e",
+			"activityBar.activeBorder": "#594cf3",
+			"activityBar.background": "#0ed21e",
+			"activityBar.foreground": "#15202b",
+			"activityBar.inactiveForeground": "#15202b99",
+			"activityBarBadge.background": "#594cf3",
+			"activityBarBadge.foreground": "#e7e7e7",
+			"statusBar.background": "#0ba217",
+			"statusBar.foreground": "#e7e7e7",
+			"statusBarItem.hoverBackground": "#0ed21e",
+			"titleBar.activeBackground": "#0ba217",
+			"titleBar.activeForeground": "#e7e7e7",
+			"titleBar.inactiveBackground": "#0ba21799",
+			"titleBar.inactiveForeground": "#e7e7e799"
+		},
+		"peacock.color": "#0ba217"
+	}
+}
