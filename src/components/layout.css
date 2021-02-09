@@ -229,6 +229,7 @@ h2 {
   text-rendering: optimizeLegibility;
   font-size: 1.62671rem;
   line-height: 1.1;
+  text-align: center;
 }
 h3 {
   margin-left: 0;
@@ -600,4 +601,18 @@ summary {
 
 .chart-container {
   margin-top: 15px;
+}
+
+table {
+  border: 1px solid black;
+}
+
+th {
+  border: 1px solid black;
+  margin: 2px;
+  text-align: center;
+}
+td {
+  border: 1px solid black;
+  text-align: center;
 }
