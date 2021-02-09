@@ -9,7 +9,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: hsla(0, 0%, 0%, 0.8);
+  color: black;
   font-family: georgia, serif;
   font-weight: normal;
   word-wrap: break-word;
@@ -19,30 +19,13 @@ body {
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
 }
-article,
-aside,
-details,
-figcaption,
-figure,
+
 footer,
 header,
-main,
-menu,
-nav,
-section,
 summary {
   display: block;
 }
-audio,
-canvas,
-progress,
-video {
-  display: inline-block;
-}
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
+
 progress {
   vertical-align: baseline;
 }
@@ -58,19 +41,13 @@ a:active,
 a:hover {
   outline-width: 0;
 }
-abbr[title] {
-  border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
-  cursor: help;
-  text-decoration: none;
-}
+
 b,
 strong {
   font-weight: inherit;
   font-weight: bolder;
 }
-dfn {
-  font-style: italic;
-}
+
 h1 {
   margin-left: 0;
   margin-right: 0;
@@ -94,26 +71,6 @@ h1 {
   margin-left: auto;
 }
 
-mark {
-  background-color: #ff0;
-  color: #000;
-}
-small {
-  font-size: 80%;
-}
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-sub {
-  bottom: -0.25em;
-}
-sup {
-  top: -0.5em;
-}
 img {
   border-style: none;
   max-width: 100%;
@@ -609,18 +566,38 @@ footer {
   margin-top: 500px;
 }
 
-
-.dropdown-field{
-  margin-right: 25px;
-  width: 100%;
-}
-.state-picker {
+.drop-down {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
-.state-select {
-  margin-left: 10px;
-  border-radius: 15px;
+details {
+  display: flex;
+  justify-content: center;
+}
 
+details > summary {
+  padding: 2px 6px;
+  background-color: inherit;
+  border: 1px solid black;
+  box-shadow: 3px 3px 4px black;
+  cursor: pointer;
+}
+
+details[open] > summary {
+  background-color: green;
+  color: white;
+}
+
+summary {
+  display: ;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.chart-container {
+  margin-top: 15px;
 }

@@ -22,6 +22,7 @@
 			"titleBar.inactiveBackground": "#0ba21799",
 			"titleBar.inactiveForeground": "#e7e7e799"
 		},
-		"peacock.color": "#0ba217"
+		"editor.fontFamily": "'Fira Code', 'monospace', monospace, 'Droid Sans Fallback'",
+		"editor.fontLigatures": true,
 	}
 }
