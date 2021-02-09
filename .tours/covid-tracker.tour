@@ -19,21 +19,6 @@
     },
     {
       "file": "src/components/covidApi.js",
-      "description": "Here we are fetching the data from our API.  We set our response to the result of the axios.get request passing in our user selected `state` as the `${value}` in our API url.  We use our setData to set our variable data to be the JSON response from our API request.",
-      "line": 28,
-      "selection": {
-        "start": {
-          "line": 21,
-          "character": 3
-        },
-        "end": {
-          "line": 27,
-          "character": 4
-        }
-      }
-    },
-    {
-      "file": "src/components/covidApi.js",
       "description": "using useEffect() we pass in an anonymous callback function with the dependecy of state which is the user selected state from the dropdown.  We also want to make sure that we pass the user selected state as a dependency at the end of the useEffect() so that when our [state] changes by user selection, the useEffect() hook will re-render our UI to reflect the 'effect' of that state changing.",
       "line": 32,
       "selection": {
@@ -44,6 +29,21 @@
         "end": {
           "line": 32,
           "character": 1
+        }
+      }
+    },
+    {
+      "file": "src/components/covidApi.js",
+      "description": "Here we are fetching the data from our API.  We set our response to the result of the axios.get request passing in our user selected `state` as the `${value}` in our API url.  We use our setData to set our variable data to be the JSON response from our API request.",
+      "line": 28,
+      "selection": {
+        "start": {
+          "line": 21,
+          "character": 3
+        },
+        "end": {
+          "line": 27,
+          "character": 4
         }
       }
     },
