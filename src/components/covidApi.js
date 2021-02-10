@@ -11,7 +11,7 @@ export default function ApiCall() {
 
   const [data, setData] = useState("")
 
-  const [state, setState] = useState("tn")
+  const [state, setState] = useState("")
 
   const onStateSelect = e => {
     e.preventDefault()
@@ -50,33 +50,64 @@ export default function ApiCall() {
             </div>
           </div>
         </div>
-        <details>
+        <h1>Covid Data</h1>
+            <h2>Here are the stats for the State chosen: {data.state} </h2>
+        <details open>
           <summary>Show Statistics</summary>
           <div className="container">
-            <h1>Covid Data</h1>
-            <h2>Here are the stats for the State chosen: {data.state} </h2>
-            <p>Date: {data.date}</p>
-            <p>Positive Test: {data.positive}</p>
-            <p>Negative Tests: {data.negative}</p>
-            <p>Total Test Results: {data.totalTestResults}</p>
-            <p># of Patients Hospitalized: {data.hospitalizedCurrently}</p>
-            <p># of Patients in ICU Currently: {data.inIcuCurrently}</p>
-            <p>Last Update: {data.lastUpdateEt}</p>
-            <p>
-              Increased Positive Tests from Last Update: {data.positiveIncrease}
-            </p>
-            <p>
-              Increased Negative Tests from Last Update: {data.negativeIncrease}
-            </p>
-            <p># of Deaths since Last Update: {data.deathIncrease}</p>
-            <p># of increased hospitilizations: {data.hospitalizedIncrease}</p>
-          </div>
-        </details>
-        <details className='chart-container'>
-          <summary>Show Charts</summary>
-          <div className='charts'>
+            
+            <table>
+              <tr>
+                <th>Category</th>
+                <th>{data.state}'s Stats </th>
+              </tr>
+              <tr>
+                <td>Date</td>
+                <td>{data.date}</td>
+              </tr>
+              <tr>
+                <td>Positive Results</td>
+                <td>{data.positive}</td>
+              </tr>
+              <tr>
+                <td>Negative Results</td>
+                <td>{data.negative}</td>
+              </tr>
+              <tr>
+                <td>Total Test Results</td>
+                <td>{data.totalTestResults}</td>
+              </tr>
+              <tr>
+                <td># of Patients Currently Hospitalized</td>
+                <td>{data.hospitalizedCurrently}</td>
+              </tr>
+              <tr>
+                <td># of Patients in ICU Currently</td>
+                <td>{data.inIcuCurrently}</td>
+              </tr>
+              <tr>
+                <td>Increase in Positive Results from Last Update</td>
+                <td>{data.positiveIncrease}</td>
+              </tr>
+              <tr>
+                <td>Increase in Negative Results from Last Update</td>
+                <td>{data.negativeIncrease}</td>
+              </tr>
+              <tr>
+                <td># of Deaths since Last Update</td>
+                <td>{data.deathIncrease}</td>
+              </tr>
+              <tr>
+                <td># of Increased Hospitalizations</td>
+                <td>{data.hospitalizedIncrease}</td>
+              </tr>
+            </table>
             
           </div>
+        </details>
+        <details className="chart-container">
+          <summary>Show Charts</summary>
+          <div className="charts"></div>
         </details>
       </div>
     )

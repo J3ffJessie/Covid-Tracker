@@ -22,7 +22,10 @@ const fakeData = {
   hospitalizedIncrease: "0",
 }
 
-
+it("renders covid statistics loading state", async () => {
+  const { asFragment } = render(<ApiCall />)
+  expect(asFragment()).toMatchSnapshot()
+})
 
 it("should render covid statistics", async () => {
   axios.get.mockImplementationOnce(() => Promise.resolve(fakeData))
@@ -33,10 +36,10 @@ it("should render covid statistics", async () => {
     const utils = render(<ApiCall />)
     container = utils.container
   })
-  expect(container.querySelectorAll("p")[1].textContent).toBe(
+  expect(container.querySelectorAll("p")[0].textContent).toBe(
     `Here are the stats for the State chosen: ${fakeData.state} `
   )
-  expect(container.querySelectorAll("p")[2].textContent).toBe(
+  expect(container.querySelectorAll("p")[1].textContent).toBe(
     `Date: ${fakeData.date}`
   )
   // expect(container.querySelector("p").textContent).toBe(fakeData.positive)
