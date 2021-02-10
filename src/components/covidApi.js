@@ -108,6 +108,7 @@ export default function ApiCall() {
         <details className="chart-container">
           <summary>Show Charts</summary>
           <div className="charts"></div>
+          <h1>Coming Soon!</h1>
         </details>
       </div>
     )
