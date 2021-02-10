@@ -59,7 +59,7 @@ export default function ApiCall() {
             <table>
               <tr>
                 <th>Category</th>
-                <th>Stat</th>
+                <th>{data.state}'s Stats </th>
               </tr>
               <tr>
                 <td>Date</td>
@@ -86,10 +86,6 @@ export default function ApiCall() {
                 <td>{data.inIcuCurrently}</td>
               </tr>
               <tr>
-                <td>Last Update</td>
-                <td>{data.lastUpdateEt}</td>
-              </tr>
-              <tr>
                 <td>Increase in Positive Results from Last Update</td>
                 <td>{data.positiveIncrease}</td>
               </tr>
@@ -106,6 +102,7 @@ export default function ApiCall() {
                 <td>{data.hospitalizedIncrease}</td>
               </tr>
             </table>
+            
           </div>
         </details>
         <details className="chart-container">
