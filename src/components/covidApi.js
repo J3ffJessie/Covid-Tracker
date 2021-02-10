@@ -11,7 +11,7 @@ export default function ApiCall() {
 
   const [data, setData] = useState("")
 
-  const [state, setState] = useState("tn")
+  const [state, setState] = useState("")
 
   const onStateSelect = e => {
     e.preventDefault()
@@ -52,7 +52,7 @@ export default function ApiCall() {
         </div>
         <h1>Covid Data</h1>
             <h2>Here are the stats for the State chosen: {data.state} </h2>
-        <details>
+        <details open>
           <summary>Show Statistics</summary>
           <div className="container">
             

@@ -24,6 +24,7 @@ export default function GetNational() {
   } else {
     return (
       <div>
+      <div>
         <table className='national-table'>
           <tr>
             <th>National Stats</th>
@@ -59,6 +60,7 @@ export default function GetNational() {
               <td>{usData[0].hospitalizedIncrease}</td>
           </tr>
         </table>
+      </div>
       </div>
     )
   }
