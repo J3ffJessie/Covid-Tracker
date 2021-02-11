@@ -23,88 +23,106 @@ export default function ApiCall() {
       `https://api.covidtracking.com/v1/states/${value}/current.json`
     )
     setData(await response.data)
+    console.log(response.data)
   }
 
   useEffect(() => {
     fetchCovidData(state)
   }, [state])
 
-    return (
-      <div>
-        <div className="data">
-          <div className="banner">
-            <div className="drop-down">
-              <select
-                name="state"
-                id="stateSelect"
-                onChange={e => onStateSelect(e)}
-              >
-                {states.map(s => (
-                  <option value={s.value}>{s.label}</option>
-                ))}
-              </select>
-            </div>
+  return (
+    <div>
+      <div className="data">
+        <div className="banner">
+          <div className="drop-down">
+            <select
+              name="state"
+              id="stateSelect"
+              onChange={e => onStateSelect(e)}
+            >
+              {states.map(s => (
+                <option value={s.value}>{s.label}</option>
+              ))}
+            </select>
           </div>
         </div>
-        <h1>Covid Data</h1>
-        <details open>
-          <summary>Show Statistics</summary>
-          <div className="container">
-            
-            <table>
-              <tr>
-                <th className='table-title'>Category</th>
-                <th className='table-title'>{data.state}'s Statistics </th>
-              </tr>
+      </div>
+      <h1>Covid Data</h1>
+      <details open>
+        <summary>Show Statistics</summary>
+        <div className="container">
+          <table>
+            <tr>
+              <th className="table-title">Category</th>
+              <th className="table-title">{data.state}'s Statistics </th>
+            </tr>
+            {data && data.date ? (
               <tr>
                 <td>Date</td>
                 <td>{data.date}</td>
               </tr>
+            ) : null}
+            {data && data.positive ? (
               <tr>
                 <td>Positive Results</td>
                 <td>{data.positive}</td>
               </tr>
+            ) : null}
+            {data && data.negative ? (
               <tr>
                 <td>Negative Results</td>
                 <td>{data.negative}</td>
               </tr>
+            ) : null}
+            {data && data.totalTestResults ? (
               <tr>
                 <td>Total Test Results</td>
                 <td>{data.totalTestResults}</td>
               </tr>
+            ) : null}
+            {data && data.hospitalizedCurrently ? (
               <tr>
                 <td># of Patients Currently Hospitalized</td>
                 <td>{data.hospitalizedCurrently}</td>
               </tr>
+            ) : null}
+            {data && data.inIcuCurrently ? (
               <tr>
                 <td># of Patients in ICU Currently</td>
                 <td>{data.inIcuCurrently}</td>
               </tr>
+            ) : null}
+            {data && data.positiveIncrease ? (
               <tr>
                 <td>Increase in Positive Results from Last Update</td>
                 <td>{data.positiveIncrease}</td>
               </tr>
+            ) : null}
+            {data && data.negativeIncrease ? (
               <tr>
                 <td>Increase in Negative Results from Last Update</td>
                 <td>{data.negativeIncrease}</td>
               </tr>
+            ) : null}
+            {data && data.deathIncrease ? (
               <tr>
                 <td># of Deaths since Last Update</td>
                 <td>{data.deathIncrease}</td>
               </tr>
+            ) : null}
+            {data && data.hospitalizedIncrease ? (
               <tr>
                 <td># of Increased Hospitalizations</td>
                 <td>{data.hospitalizedIncrease}</td>
               </tr>
-            </table>
-            
-          </div>
-        </details>
-        {/* <details className="chart-container">
+            ) : null}
+          </table>
+        </div>
+      </details>
+      {/* <details className="chart-container">
           <summary>Show Charts</summary>
           <div className="charts"></div>
-          <h1>Coming Soon!</h1>
         </details> */}
-      </div>
-    )
-  }
+    </div>
+  )
+}
