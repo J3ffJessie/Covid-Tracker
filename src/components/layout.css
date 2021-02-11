@@ -581,14 +581,14 @@ details {
 
 details > summary {
   padding: 2px 6px;
-  background-color: inherit;
+  background-color: green;
   border: 1px solid black;
   box-shadow: 3px 3px 4px black;
   cursor: pointer;
 }
 
 details[open] > summary {
-  background-color: green;
+  background-color: red;
   color: white;
 }
 
