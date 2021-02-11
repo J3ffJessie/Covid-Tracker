@@ -101,10 +101,10 @@ export default function ApiCall() {
             
           </div>
         </details>
-        <details className="chart-container">
+        {/* <details className="chart-container">
           <summary>Show Charts</summary>
           <div className="charts"></div>
-        </details>
+        </details> */}
       </div>
     )
   }

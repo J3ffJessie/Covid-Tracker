@@ -605,6 +605,11 @@ summary {
   margin-top: 15px;
 }
 
+.table-title {
+  text-align: left;
+  padding-left: 15px !important;
+}
+
 
 th {
   border: 1px solid black;
@@ -613,5 +618,6 @@ th {
 }
 td {
   border: 1px solid black;
-  text-align: center;
+  text-align: left;
+  padding-left: 15px !important;
 }
