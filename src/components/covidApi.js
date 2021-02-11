@@ -23,7 +23,6 @@ export default function ApiCall() {
       `https://api.covidtracking.com/v1/states/${value}/current.json`
     )
     setData(await response.data)
-    console.log(response.data)
   }
 
   useEffect(() => {
@@ -56,10 +55,10 @@ export default function ApiCall() {
               <th className="table-title">Category</th>
               <th className="table-title">{data.state}'s Statistics </th>
             </tr>
-            {data && data.date ? (
+            {data && data.lastUpdateEt ? (
               <tr>
-                <td>Date</td>
-                <td>{data.date}</td>
+                <td>Date/Time of Last Update</td>
+                <td>{data.lastUpdateEt}</td>
               </tr>
             ) : null}
             {data && data.positive ? (
