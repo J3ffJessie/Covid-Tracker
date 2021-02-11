@@ -11,7 +11,7 @@ export default function ApiCall() {
 
   const [data, setData] = useState("")
 
-  const [state, setState] = useState("")
+  const [state, setState] = useState("al")
 
   const onStateSelect = e => {
     e.preventDefault()
@@ -30,9 +30,6 @@ export default function ApiCall() {
     fetchCovidData(state)
   }, [state])
 
-  if (!data) {
-    return "loading...."
-  } else {
     return (
       <div>
         <div className="data">
@@ -51,15 +48,14 @@ export default function ApiCall() {
           </div>
         </div>
         <h1>Covid Data</h1>
-            <h2>Here are the stats for the State chosen: {data.state} </h2>
         <details open>
           <summary>Show Statistics</summary>
           <div className="container">
             
             <table>
               <tr>
-                <th>Category</th>
-                <th>{data.state}'s Stats </th>
+                <th className='table-title'>Category</th>
+                <th className='table-title'>{data.state}'s Statistics </th>
               </tr>
               <tr>
                 <td>Date</td>
@@ -113,4 +109,3 @@ export default function ApiCall() {
       </div>
     )
   }
-}
