@@ -23,7 +23,6 @@ export default function ApiCall() {
       `https://api.covidtracking.com/v1/states/${value}/current.json`
     )
     setData(await response.data)
-    console.log(response.data)
   }
 
   useEffect(() => {
