@@ -12,7 +12,6 @@ export default function GetNational() {
       `https://api.covidtracking.com/v1/us/current.json`
     )
     setUsData(await response.data)
-    // console.log(response.data);
   }
 
   useEffect(() => {
