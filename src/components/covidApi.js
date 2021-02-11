@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { Link } from "gatsby"
 import axios from "axios"
 import states from "../utils/states"
+import NumberFormat from 'react-number-format'
 
 import Layout from "./layout"
 import SEO from "./seo"
@@ -64,55 +65,55 @@ export default function ApiCall() {
             {data && data.positive ? (
               <tr>
                 <td>Positive Results</td>
-                <td>{data.positive}</td>
+                <td><NumberFormat value={data.positive} displayType={'text'} thousandSeparator={true}/></td>
               </tr>
             ) : null}
             {data && data.negative ? (
               <tr>
                 <td>Negative Results</td>
-                <td>{data.negative}</td>
+                <td><NumberFormat value={data.negative} displayType={'text'} thousandSeparator={true}/></td>
               </tr>
             ) : null}
             {data && data.totalTestResults ? (
               <tr>
                 <td>Total Test Results</td>
-                <td>{data.totalTestResults}</td>
+                <td><NumberFormat value={data.totalTestResults} displayType={'text'} thousandSeparator={true}/></td>
               </tr>
             ) : null}
             {data && data.hospitalizedCurrently ? (
               <tr>
                 <td># of Patients Currently Hospitalized</td>
-                <td>{data.hospitalizedCurrently}</td>
+                <td><NumberFormat value={data.hospitalizedCurrently} displayType={'text'} thousandSeparator={true}/></td>
               </tr>
             ) : null}
             {data && data.inIcuCurrently ? (
               <tr>
                 <td># of Patients in ICU Currently</td>
-                <td>{data.inIcuCurrently}</td>
+                <td><NumberFormat value={data.inIcuCurrently} displayType={'text'} thousandSeparator={true}/></td>
               </tr>
             ) : null}
             {data && data.positiveIncrease ? (
               <tr>
                 <td>Increase in Positive Results from Last Update</td>
-                <td>{data.positiveIncrease}</td>
+                <td><NumberFormat value={data.positiveIncrease} displayType={'text'} thousandSeparator={true}/></td>
               </tr>
             ) : null}
             {data && data.negativeIncrease ? (
               <tr>
                 <td>Increase in Negative Results from Last Update</td>
-                <td>{data.negativeIncrease}</td>
+                <td><NumberFormat value={data.negativeIncrease} displayType={'text'} thousandSeparator={true}/></td>
               </tr>
             ) : null}
             {data && data.deathIncrease ? (
               <tr>
                 <td># of Deaths since Last Update</td>
-                <td>{data.deathIncrease}</td>
+                <td><NumberFormat value={data.deathIncrease} displayType={'text'} thousandSeparator={true}/></td>
               </tr>
             ) : null}
             {data && data.hospitalizedIncrease ? (
               <tr>
                 <td># of Increased Hospitalizations</td>
-                <td>{data.hospitalizedIncrease}</td>
+                <td><NumberFormat value={data.hospitalizedIncrease} displayType={'text'} thousandSeparator={true}/></td>
               </tr>
             ) : null}
           </table>
