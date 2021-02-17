@@ -43,5 +43,5 @@ it("should render covid statistics", async () => {
   ).toEqual("Date/Time of Last Update")
   expect(
     screen.getByRole("cell", { name: /2\/1\/2021 11:00/i }).textContent
-  ).toEqual("fakeData.lastUpdateEt")
+  ).toEqual(fakeData.lastUpdateEt)
 })
