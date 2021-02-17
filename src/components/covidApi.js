@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useRef } from "react"
 import { Link } from "gatsby"
 import axios from "axios"
 import states from "../utils/states"
-import NumberFormat from 'react-number-format'
+import NumberFormat from "react-number-format"
 
 import Layout from "./layout"
 import SEO from "./seo"
 
 export default function ApiCall() {
+  const firstUpdate = useRef(false)
   const [requestState, setRequestState] = useState("idle")
 
   const [data, setData] = useState("")
@@ -23,7 +24,7 @@ export default function ApiCall() {
     const response = await axios.get(
       `https://api.covidtracking.com/v1/states/${value}/current.json`
     )
-    setData(await response.data)
+    setData(response.data)
   }
 
   useEffect(() => {
@@ -41,7 +42,7 @@ export default function ApiCall() {
               onChange={e => onStateSelect(e)}
             >
               {states.map(s => (
-                <option value={s.value}>{s.label}</option>
+                <option key={s.value} value={s.value}>{s.label}</option>
               ))}
             </select>
           </div>
@@ -52,10 +53,13 @@ export default function ApiCall() {
         <summary>Show Statistics</summary>
         <div className="container">
           <table>
+            <thead>
             <tr>
               <th className="table-title">Category</th>
               <th className="table-title">{data.state}'s Statistics </th>
             </tr>
+            </thead>
+            <tbody>
             {data && data.lastUpdateEt ? (
               <tr>
                 <td>Date/Time of Last Update</td>
@@ -116,6 +120,7 @@ export default function ApiCall() {
                 <td><NumberFormat value={data.hospitalizedIncrease} displayType={'text'} thousandSeparator={true}/></td>
               </tr>
             ) : null}
+            </tbody>
           </table>
         </div>
       </details>
