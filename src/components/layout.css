@@ -226,14 +226,14 @@ details {
 
 details>summary {
   padding: 2px 6px;
-  background-color: green;
+  background-color: white;
   border: 1px solid black;
   box-shadow: 3px 3px 4px black;
   cursor: pointer;
 }
 
 details[open]>summary {
-  background-color: red;
+  background-color: black;
   color: white;
 }
 
