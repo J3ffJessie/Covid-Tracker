@@ -3,6 +3,9 @@ import { Link } from "gatsby"
 import axios from "axios"
 import states from "../utils/states"
 import NumberFormat from "react-number-format"
+import  {BarChart, LineChart} from 'react-chartkick'
+import 'chart.js'
+
 
 import Layout from "./layout"
 import SEO from "./seo"
@@ -25,6 +28,7 @@ export default function ApiCall() {
       `https://api.covidtracking.com/v1/states/${value}/current.json`
     )
     setData(response.data)
+    console.log(response.data);
   }
 
   useEffect(() => {
@@ -124,10 +128,20 @@ export default function ApiCall() {
           </table>
         </div>
       </details>
-      {/* <details className="chart-container">
+      <details className="chart-container">
           <summary>Show Charts</summary>
-          <div className="charts"></div>
-        </details> */}
+          <div className="charts">
+          <BarChart
+          dataset={{backgroundColor: ['red', 'green', 'blue']}} 
+          data=
+          {
+            {
+              "Positive": data.positive, 
+              "Negative": data.negative,
+              "Total Test Results": data.totalTestResults
+              }}/>
+          </div>
+        </details>
     </div>
   )
 }

@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ApiCall from '../components/covidApi'
+import GetNational from "../components/nationalApi"
 
 const IndexPage = () => (
   <Layout>
