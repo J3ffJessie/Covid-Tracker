@@ -18,6 +18,8 @@ export default function ApiCall() {
 
   const [state, setState] = useState("al")
 
+  const [chartData, setChartData] = useState([['None', 0]]);
+
   const onStateSelect = e => {
     e.preventDefault()
     setState(e.target.value)
@@ -28,7 +30,12 @@ export default function ApiCall() {
       `https://api.covidtracking.com/v1/states/${value}/current.json`
     )
     setData(response.data)
-    console.log(response.data);
+    const { data: { positive, negative }} = response;
+    const newChartData =  [
+      ["Positive", !positive ? 0 : positive],
+      ["Negative", !negative ? 0 : negative]
+    ]
+    setChartData(newChartData)
   }
 
   useEffect(() => {
@@ -134,12 +141,8 @@ export default function ApiCall() {
           <BarChart
           dataset={{backgroundColor: ['red', 'green', 'blue']}} 
           data=
-          {
-            {
-              "Positive": data.positive, 
-              "Negative": data.negative,
-              "Total Test Results": data.totalTestResults
-              }}/>
+          {chartData}
+          />
           </div>
         </details>
     </div>
