@@ -30,10 +30,26 @@ export default function ApiCall() {
       `https://api.covidtracking.com/v1/states/${value}/current.json`
     )
     setData(response.data)
-    const { data: { positive, negative }} = response;
+    const { data: { 
+      positive,
+      negative,
+      totalTestResults,
+      hospitalizedCurrently,
+      inIcuCurrently,
+      positiveIncrease,
+      negativeIncrease,
+      deathIncrease,
+      hospitalizedIncrease }} = response;
     const newChartData =  [
       ["Positive", !positive ? 0 : positive],
-      ["Negative", !negative ? 0 : negative]
+      ["Negative", !negative ? 0 : negative],
+      ["Total Test Results", !totalTestResults ? 0 : totalTestResults],
+      ["Hospitalized Currently", !hospitalizedCurrently ? 0 : hospitalizedCurrently],
+      ["In ICU Currently", !inIcuCurrently ? 0 : inIcuCurrently],
+      ["Increase in Positive Tests", !positiveIncrease ? 0 : positiveIncrease],
+      ["Increase in Negative Tests", !negativeIncrease ? 0 : negativeIncrease],
+      ["Increase in Deaths", !deathIncrease ? 0 : deathIncrease],
+      ["Increase in Hospitalizations", !hospitalizedIncrease ? 0 : hospitalizedIncrease]
     ]
     setChartData(newChartData)
   }
@@ -139,7 +155,7 @@ export default function ApiCall() {
           <summary>Show Charts</summary>
           <div className="charts">
           <BarChart
-          dataset={{backgroundColor: ['red', 'green', 'blue']}} 
+          dataset={{backgroundColor: ['red', 'green', 'blue', 'orange', 'purple']}} 
           data=
           {chartData}
           />
