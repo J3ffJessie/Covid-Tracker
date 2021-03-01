@@ -5,20 +5,18 @@ import states from "../utils/states"
 import NumberFormat from "react-number-format"
 import  {BarChart, LineChart} from 'react-chartkick'
 import 'chart.js'
-
-
 import Layout from "./layout"
 import SEO from "./seo"
 
+
+
 export default function ApiCall() {
   const firstUpdate = useRef(false)
-  const [requestState, setRequestState] = useState("idle")
-
   const [data, setData] = useState("")
-
+  const [national, setNational] = useState('')
   const [state, setState] = useState("al")
-
   const [chartData, setChartData] = useState([['None', 0]]);
+  const [nationalChartData, setNationalChartData] = useState([['None', 0]]);
 
   const onStateSelect = e => {
     e.preventDefault()
@@ -53,6 +51,35 @@ export default function ApiCall() {
     ]
     setChartData(newChartData)
   }
+
+  // async function fetchNationalData() {
+  //   const response= await axios.get(
+  //     `https://api.covidtracking.com/v1/us/current.json`
+  //   )
+  //   setNational(response.data)
+  //   console.log(response.data);
+  //   const { national: {
+  //     postitive,
+  //     negative,
+  //     totalTestResults,
+  //     hospitalizedCurrently,
+  //     inIcuCurrently,
+  //     positiveIncrease,
+  //     negativeIncrease,
+  //     deathIncrease,
+  //     hospitalizedIncrease}} = response;
+  //   const usChartData = [
+  //     [],
+  //     [],
+  //     [],
+  //     [],
+  //     [],
+  //     [],
+  //     [],
+  //     [],
+  //   ]
+  //   setNationalChartData(usChartData)
+  // }
 
   useEffect(() => {
     fetchCovidData(state)
